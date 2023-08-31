@@ -18,7 +18,9 @@
     "dev:server": "babel-node server/start-dev-server.js",
     "dev:server:watch": "nodemon server/start-dev-server.js  --exec babel-node",
     "build": "next build web",
-    "start": "babel-node server/start-prod.js"
+    "start": "babel-node server/start-prod.js",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -28,7 +30,7 @@
     "cookie-parser": "^1.4.4",
     "crc-32": "^1.2.0",
     "express": "^4.17.1",
-    "firebase-admin": "^8.3.0",
+    "firebase-admin": "^9.0.0",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.15",
     "next": "^7.0.2",
@@ -42,7 +44,8 @@
     "redux-thunk": "^2.3.0",
     "rollbar": "^2.9.0",
     "socket.io": "^2.2.0",
-    "socket.io-client": "^2.2.0"
+    "socket.io-client": "^2.2.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -74,5 +77,6 @@
     "react-test-renderer": "^16.8.6",
     "redux-devtools-extension": "^2.13.8",
     "style-loader": "^0.23.1"
-  }
+  },
+  "snyk": true
 }
